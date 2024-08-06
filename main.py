@@ -450,7 +450,7 @@ class Bot(BaseBot):
   
     async def is_user_allowed(self, user: User) -> bool:
         user_privileges = await self.highrise.get_room_privilege(user.id)
-        return user_privileges.moderator or user.username in ["kakainek", "The.Ciyo"]
+        return user_privileges.moderator or user.username in ["kavsak", "The.Ciyo"]
   
     async def moderate_room(
         self,
