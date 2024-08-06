@@ -59,11 +59,7 @@ class Bot(BaseBot):
         await self.highrise.chat(f"Hoşgeldin @{user.username}!")
 
     async def on_user_leave(self, user: User):
-        # Ayrılan kullanıcının ID'sini kontrol et
-        if user.id == self.following_user.id:
-            self.following_user = None
-            await self.highrise.chat(f"Takibi bıraktım @{user.username}!")
-        # Ayrılan kullanıcının ID'sini takip edilenler listesinde güncelle
+
         if user.id in self.kus:
             self.kus[user.id] = False
 
