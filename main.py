@@ -18,7 +18,7 @@ class Bot(BaseBot):
         self.user_positions = {} 
         self.position_tasks = {} 
         
-    haricler = ["kakainek"]
+    haricler = ["kavsak"]
 
 
     async def on_start(self, session_metadata: SessionMetadata) -> None:
@@ -653,7 +653,7 @@ class WebServer():
     t.start()
     
 class RunBot():
-  room_id = "6492f643c0a0e46d6f893ea1"
+  room_id = "66b4c1c021433508c45ff9c0"
   bot_token = "dd800a89a0eacce938ed0a78250608eb10c4f4188ff1658b324c1c40e35bef19"
   bot_file = "main"
   bot_class = "Bot"
