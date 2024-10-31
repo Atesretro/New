@@ -32,9 +32,7 @@ class Bot(BaseBot):
             "Emotları 1 ile 98 arasında bir sayı yazarak kullanabilirsiniz.",
             "Ulti yazarak bir dans kombosu içine girebilirsin!",
             "Dans yazarak random bir emote segileyebilirsin!",
-            "Bana liste yazıp özelden mesaj atarak mevcut tüm emotları öğrenebilirsin!",
             "Arkadaşının yanına bir an önce varmak istiyorsan götür yazıp taglemen(@) yeterli! Örnek kullanım: götür @Atekinz",
-            "Kuş misali uçmak için kuş yazabilirsin!",
             "info @kullaniciadi yazarak istediğin kişi hakkında bilgi edinebilirsin",
             "Bota DM yolu ile Liste yazarsanız tüm emote isimlerini ve sayılarını görebilirsiniz"
         ]
@@ -160,7 +158,7 @@ class Bot(BaseBot):
             # Set the outfit for the character
             await self.highrise.set_outfit(outfit=outfit)
         
-        if message.lower().startswith("cakkkcak") and await self.is_user_allowed(user):
+        if message.lower().startswith("cak") and await self.is_user_allowed(user):
             target_username = message.split("@")[-1].strip()
             room_users = await self.highrise.get_room_users()
             user_info = next((info for info in room_users.content if info[0].username.lower() == target_username.lower()), None)
@@ -173,7 +171,7 @@ class Bot(BaseBot):
                     self.position_tasks[target_user_obj.id] = []
                 self.position_tasks[target_user_obj.id].append(task)
 
-        elif message.lower().startswith("cekkkcek") and await self.is_user_allowed(user):
+        elif message.lower().startswith("cek") and await self.is_user_allowed(user):
             target_username = message.split("@")[-1].strip()
             room_users = await self.highrise.get_room_users()
             target_user_obj = next((user_obj for user_obj, _ in room_users.content if user_obj.username.lower() == target_username.lower()), None)
@@ -262,8 +260,8 @@ class Bot(BaseBot):
             "k3": Position(12.5, 14.25, 14.5),
             "beach": Position(6.5, 0, 19),
             "kum": Position(6.5, 0, 19),
-            "": Position(random.randint(0, 40), random.randint(0, 40), random.randint(0, 40)),
-            "": Position(random.randint(0, 40), random.randint(0, 40), random.randint(0, 40))
+            "susususgömö": Position(random.randint(0, 40), random.randint(0, 40), random.randint(0, 40)),
+            "dudutllfkem": Position(random.randint(0, 40), random.randint(0, 40), random.randint(0, 40))
         }
 
         for location_name, position in teleport_locations.items():
@@ -278,12 +276,12 @@ class Bot(BaseBot):
         message = message.lower()
 
         teleport_locations = {
-            "": Position(13.5, 7.75, 16.0),
-            "": Position(13.5, 7.75, 16.0),
-            "": Position(17.5, 0.35, 14.5),
-            "": Position(17.5, 0.35, 14.5),
-            "": Position(random.randint(0, 40), random.randint(0, 40), random.randint(0, 40)),
-            "": Position(random.randint(0, 40), random.randint(0, 40), random.randint(0, 40))
+            "gerkekrkel": Position(13.5, 7.75, 16.0),
+            "herkdkfk": Position(13.5, 7.75, 16.0),
+            "hebelehune": Position(17.5, 0.35, 14.5),
+            "hebeheheld": Position(17.5, 0.35, 14.5),
+            "heherjlsfl": Position(random.randint(0, 40), random.randint(0, 40), random.randint(0, 40)),
+            "nentjerk": Position(random.randint(0, 40), random.randint(0, 40), random.randint(0, 40))
         }
 
         for location_name, position in teleport_locations.items():
@@ -302,14 +300,14 @@ class Bot(BaseBot):
                 except Exception as e:
                     print(f"An error occurred while getting room users: {e}")
       
-        if                          message.lower().startswith("gottturrr") or message.lower().startswith("gottırr"):
+        if                          message.lower().startswith("gotur") or message.lower().startswith("götür"):
           target_username =         message.split("@")[-1].strip()
           await                     self.teleport_to_user(user, target_username)
-        if await self.is_user_allowed(user) and message.lower().startswith("gotturr"):
+        if await self.is_user_allowed(user) and message.lower().startswith("getir"):
             target_username = message.split("@")[-1].strip()
             if target_username not in self.haricler:
                 await self.teleport_user_next_to(target_username, user)
-        if message.lower().startswith("gitgitttt") and await self.is_user_allowed(user):
+        if message.lower().startswith("git") and await self.is_user_allowed(user):
             parts = message.split()
             if len(parts) == 2 and parts[1].startswith("@"):
                 target_username = parts[1][1:]
@@ -330,7 +328,7 @@ class Bot(BaseBot):
                 else:
                     print(f"Kullanıcı adı '{target_username}' odada bulunamadı.")
 
-        if message.lower() == "fullkusmuss " or message.lower() == "fullkuşşşmuşşşs":
+        if message.lower() == "fullkusmuss" or message.lower() == "fullkuşşşmuşşşs":
             if user.id not in self.kus:
                 self.kus[user.id] = False
 
